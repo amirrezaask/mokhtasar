@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
+	"net/http"
 	"time"
 )
 
@@ -30,7 +30,33 @@ func shorten(url string) string {
 }
 
 func main() {
-	shortenKey := shorten("http://google.com")
-	fmt.Println(shortenKey)
-	fmt.Println(getOriginalURL(shortenKey))
+	// mokhtasar.io/short?url=https://google.com
+	http.HandleFunc("/short", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			w.WriteHeader(http.StatusBadRequest)
+			w.Write([]byte("Only GET request supported"))
+			return
+		}
+		url := r.URL.Query().Get("url")
+		if url == "" {
+			w.WriteHeader(http.StatusBadRequest)
+			w.Write([]byte("need a url to short"))
+			return
+		}
+		key := shorten(url)
+		toClickURL := "localhost:8080/long?key=" + key
+		w.Write([]byte(toClickURL))
+	})
+	//mokhtasar.io/long?key=harchi
+	http.HandleFunc("/long", func(w http.ResponseWriter, r *http.Request) {
+		key := r.URL.Query().Get("key")
+		if key == "" {
+			w.WriteHeader(http.StatusBadRequest)
+			w.Write([]byte("need a url to short"))
+			return
+		}
+		url := getOriginalURL(key)
+		w.Write([]byte(url))
+	})
+	http.ListenAndServe(":8080", nil)
 }
