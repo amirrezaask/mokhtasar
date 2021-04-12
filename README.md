@@ -3,11 +3,11 @@
 
 ## Episodes
 - Hello World and Intro ( Basic URL shortning using maps )
+- Adding http server and REST APIs (StdHttp or Echo)
+- Adding PostgreSQL as persistent storage ( Raw sql )
+- Hexagonal architecture and project structure
 - Commandline interface ( Cobra ) 
 - Logger and logging in general
-- Adding http server and REST APIs (StdHttp or Echo)
-- Hexagonal architecture and project structure
-- Adding PostgreSQL as persistent storage ( Raw sql )
 - Adding sqlBoiler as ORM
 - Adding Docker and docker-compose
 - Adding gitlabci and making a CICD pipeline ?
