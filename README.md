@@ -5,7 +5,7 @@
 - Hello World and Intro ( Basic URL shortning using maps )
 - Adding http server and REST APIs (StdHttp or Echo/Gin)
 - Adding PostgreSQL as persistent storage ( Raw sql )
-- Hexagonal architecture and project structure
+- Better structure for code
 - Commandline interface ( Cobra ) 
 - Logger and logging in general
 - Adding sqlBoiler as ORM
