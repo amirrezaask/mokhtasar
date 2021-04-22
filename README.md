@@ -2,10 +2,10 @@
 
 
 ## Episodes
-- Hello World and Intro ( Basic URL shortning using maps )
-- Adding http server and REST APIs (StdHttp or Echo/Gin)
-- Adding PostgreSQL as persistent storage ( Raw sql )
-- Better structure for code
+- Hello World and Intro ( Basic URL shortning using maps ) [x]
+- Adding http server and REST APIs (StdHttp) [x]
+- Adding PostgreSQL as persistent storage ( Raw sql ) [x]
+- Better structure for code [x]
 - Commandline interface ( Cobra ) 
 - Logger and logging in general
 - Adding sqlBoiler as ORM
