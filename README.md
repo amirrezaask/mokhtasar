@@ -6,7 +6,7 @@
 - Adding http server and REST APIs (StdHttp) [x]
 - Adding PostgreSQL as persistent storage ( Raw sql ) [x]
 - Better structure for code [x]
-- Commandline interface ( Cobra ) 
+- Commandline interface ( Cobra ) [x]
 - Logger and logging in general
 - Adding sqlBoiler as ORM
 - Adding Docker and docker-compose
