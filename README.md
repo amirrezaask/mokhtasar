@@ -7,7 +7,7 @@
 - Adding PostgreSQL as persistent storage ( Raw sql ) [x]
 - Better structure for code [x]
 - Commandline interface ( Cobra ) [x]
-- Logger and logging in general
+- Logger and logging in general [x]
 - Adding sqlBoiler as ORM
 - Adding Docker and docker-compose
 - Adding Redis for caching
