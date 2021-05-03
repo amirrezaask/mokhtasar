@@ -1,5 +1,5 @@
 # Mokhtasar 
-
+Mokhtasar URL shortener
 
 ## Episodes
 - Hello World and Intro ( Basic URL shortning using maps ) [x]
@@ -8,5 +8,3 @@
 - Better structure for code [x]
 - Commandline interface ( Cobra ) [x]
 - Logger and logging in general [x]
-- Adding Docker and docker-compose
-- Add Gitlab/Github CICD 
