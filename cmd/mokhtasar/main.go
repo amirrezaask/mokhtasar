@@ -12,6 +12,7 @@ import (
 	"github.com/amirrezaask/mokhtasar/pkg"
 	_ "github.com/lib/pq"
 	"github.com/spf13/cobra"
+	"go.uber.org/zap"
 )
 
 func randString(n int) string {
@@ -51,7 +52,14 @@ var serveCmd = &cobra.Command{
 			DB:              db,
 			RandomGenerator: randString,
 		}
-		handler := &handlers.HTTPHandler{Mokhtasar: mokhtasar}
+		dc := zap.NewDevelopmentConfig()
+		dc.Level = zap.NewAtomicLevelAt(zap.DebugLevel)
+		logger, err := dc.Build()
+		if err != nil {
+			panic(err)
+		}
+		sl := logger.Sugar()
+		handler := &handlers.HTTPHandler{Mokhtasar: mokhtasar, Logger: sl}
 		// mokhtasar.io/short?url=https://google.com
 		http.HandleFunc("/short", handler.Shorten)
 		//mokhtasar.io/long?key=harchi
